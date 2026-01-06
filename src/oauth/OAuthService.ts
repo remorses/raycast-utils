@@ -77,9 +77,9 @@ export class OAuthService implements OAuthServiceOptions {
         description: "Connect your Asana account",
       }),
       clientId: options.clientId ?? PROVIDER_CLIENT_IDS.asana,
-      authorizeUrl: options.authorizeUrl ?? "https://asana.oauth.raycast.com/authorize",
-      tokenUrl: options.tokenUrl ?? "https://asana.oauth.raycast.com/token",
-      refreshTokenUrl: options.refreshTokenUrl ?? "https://asana.oauth.raycast.com/refresh-token",
+      authorizeUrl: options.authorizeUrl ?? "http://localhost:8041/oauth/asana/authorize",
+      tokenUrl: options.tokenUrl ?? "http://localhost:8041/oauth/asana/token",
+      refreshTokenUrl: options.refreshTokenUrl ?? "http://localhost:8041/oauth/asana/refresh-token",
       scope: options.scope,
       personalAccessToken: options.personalAccessToken,
       onAuthorize: options.onAuthorize,
@@ -113,9 +113,9 @@ export class OAuthService implements OAuthServiceOptions {
         description: "Connect your GitHub account",
       }),
       clientId: options.clientId ?? PROVIDER_CLIENT_IDS.github,
-      authorizeUrl: options.authorizeUrl ?? "https://github.oauth.raycast.com/authorize",
-      tokenUrl: options.tokenUrl ?? "https://github.oauth.raycast.com/token",
-      refreshTokenUrl: options.refreshTokenUrl ?? "https://github.oauth.raycast.com/refresh-token",
+      authorizeUrl: options.authorizeUrl ?? "http://localhost:8041/oauth/github/authorize",
+      tokenUrl: options.tokenUrl ?? "http://localhost:8041/oauth/github/token",
+      refreshTokenUrl: options.refreshTokenUrl ?? "http://localhost:8041/oauth/github/refresh-token",
       scope: options.scope,
       personalAccessToken: options.personalAccessToken,
       onAuthorize: options.onAuthorize,
@@ -226,9 +226,9 @@ export class OAuthService implements OAuthServiceOptions {
         description: "Connect your Linear account",
       }),
       clientId: options.clientId ?? PROVIDER_CLIENT_IDS.linear,
-      authorizeUrl: options.authorizeUrl ?? "https://linear.oauth.raycast.com/authorize",
-      tokenUrl: options.tokenUrl ?? "https://linear.oauth.raycast.com/token",
-      refreshTokenUrl: options.refreshTokenUrl ?? "https://linear.oauth.raycast.com/refresh-token",
+      authorizeUrl: options.authorizeUrl ?? "http://localhost:8041/oauth/linear/authorize",
+      tokenUrl: options.tokenUrl ?? "http://localhost:8041/oauth/linear/token",
+      refreshTokenUrl: options.refreshTokenUrl ?? "http://localhost:8041/oauth/linear/refresh-token",
       scope: options.scope,
       extraParameters: {
         actor: "user",
@@ -260,9 +260,9 @@ export class OAuthService implements OAuthServiceOptions {
         description: "Connect your Slack account",
       }),
       clientId: options.clientId ?? PROVIDER_CLIENT_IDS.slack,
-      authorizeUrl: options.authorizeUrl ?? "https://slack.oauth.raycast.com/authorize",
-      tokenUrl: options.tokenUrl ?? "https://slack.oauth.raycast.com/token",
-      refreshTokenUrl: options.tokenUrl ?? "https://slack.oauth.raycast.com/refresh-token",
+      authorizeUrl: options.authorizeUrl ?? "http://localhost:8041/oauth/slack/authorize",
+      tokenUrl: options.tokenUrl ?? "http://localhost:8041/oauth/slack/token",
+      refreshTokenUrl: options.refreshTokenUrl ?? "http://localhost:8041/oauth/slack/refresh-token",
       scope: "",
       extraParameters: {
         user_scope: options.scope,
@@ -329,9 +329,16 @@ export class OAuthService implements OAuthServiceOptions {
    * @returns {Promise<string>} A promise that resolves with the access token obtained from the authorization flow, or null if the token could not be obtained.
    */
   async authorize() {
+    console.log("OAuthService.authorize() called for", this.client.providerName);
     const currentTokenSet = await this.client.getTokens();
+    console.log("OAuthService.authorize() currentTokenSet:", {
+      hasAccessToken: !!currentTokenSet?.accessToken,
+      hasRefreshToken: !!currentTokenSet?.refreshToken,
+      isExpired: currentTokenSet?.isExpired?.(),
+    });
     if (currentTokenSet?.accessToken) {
       if (currentTokenSet.refreshToken && currentTokenSet.isExpired()) {
+        console.log("OAuthService.authorize() refreshing expired token");
         const tokens = await this.refreshTokens({
           token: currentTokenSet.refreshToken,
         });
@@ -342,9 +349,11 @@ export class OAuthService implements OAuthServiceOptions {
           return tokens.access_token;
         }
       }
+      console.log("OAuthService.authorize() returning existing token");
       return currentTokenSet.accessToken;
     }
 
+    console.log("OAuthService.authorize() starting new authorization flow");
     const authRequest = await this.client.authorizationRequest({
       endpoint: this.authorizeUrl,
       clientId: this.clientId,
@@ -353,12 +362,18 @@ export class OAuthService implements OAuthServiceOptions {
     });
 
     const { authorizationCode } = await this.client.authorize(authRequest);
+    console.log("OAuthService.authorize() got authorizationCode:", authorizationCode?.slice(0, 10) + "...");
     const tokens = await this.fetchTokens({
       authRequest,
       authorizationCode,
     });
+    console.log("OAuthService.authorize() got tokens:", {
+      hasAccessToken: !!tokens.access_token,
+      hasRefreshToken: !!tokens.refresh_token,
+    });
 
     await this.client.setTokens(tokens);
+    console.log("OAuthService.authorize() tokens saved, returning access_token");
 
     return tokens.access_token;
   }
@@ -393,13 +408,23 @@ export class OAuthService implements OAuthServiceOptions {
       };
     }
 
+    console.log("fetchTokens request:", {
+      url: this.tokenUrl,
+      bodyEncoding: this.bodyEncoding,
+      hasCodeVerifier: !!authRequest.codeVerifier,
+      redirectURI: authRequest.redirectURI,
+    });
     const response = await fetch(this.tokenUrl, { method: "POST", ...options });
     if (!response.ok) {
       const responseText = await response.text();
-      console.error("fetch tokens error:", responseText);
-      throw new Error(`Error while fetching tokens: ${response.status} (${response.statusText})\n${responseText}`);
+      console.error("fetch tokens error:", response.status, response.statusText);
+      // Only show first 500 chars to avoid wall of HTML
+
+      throw new Error(`Error while fetching tokens: ${response.status} (${response.statusText})\n${responseText.slice(0, 500)}`);
     }
-    const tokens = this.tokenResponseParser(await response.json());
+    const text = await response.text()
+    console.log('tokens response',text.slice(0, 500))
+    const tokens = this.tokenResponseParser(JSON.parse(text));
 
     // Some clients such as Linear can return a scope array instead of a string
     return Array.isArray(tokens.scope) ? { ...tokens, scope: tokens.scope.join(" ") } : tokens;
