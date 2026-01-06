@@ -90,14 +90,22 @@ export function withAccessToken<T>(options: WithAccessTokenParameters) {
 
   return (Component: React.ComponentType<T>) => {
     const WrappedComponent: React.ComponentType<T> = (props) => {
+      console.log("withAccessToken WrappedComponent render", {
+        hasPersonalAccessToken: !!options.personalAccessToken,
+        hasAuthorize: !!authorize,
+        hasToken: !!token,
+      });
       if (options.personalAccessToken) {
         token = options.personalAccessToken;
         type = "personal";
       } else {
         if (!authorize) {
+          console.log("withAccessToken: starting authorize()");
           authorize = options.authorize();
         }
+        console.log("withAccessToken: calling React.use(authorize)");
         token = React.use(authorize);
+        console.log("withAccessToken: React.use resolved, token:", token?.slice(0, 10) + "...");
         type = "oauth";
       }
 
