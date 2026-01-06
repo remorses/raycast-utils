@@ -19,11 +19,7 @@
   },
   "scripts": {
     "lint": "eslint src/",
-    "build": "(rm -rf .parcel-cache || true) && (rm -rf dist || true) && parcel build",
-    "dev": "parcel watch",
-    "test": "npm run lint",
-    "prepublishOnly": "npm run build && npm test",
-    "postpublish": "gh workflow run sync-utils-docs.yml --repo raycast/extensions"
+    "test": "npm run lint"
   },
   "peerDependencies": {
     "@raycast/api": ">=1.99.4",
@@ -40,7 +36,7 @@
     "extensions"
   ],
   "files": [
-    "dist",
+    "src",
     "README.md"
   ],
   "license": "MIT",
