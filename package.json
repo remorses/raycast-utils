@@ -22,7 +22,7 @@
     "test": "npm run lint"
   },
   "peerDependencies": {
-    "@raycast/api": ">=1.99.4",
+    "@raycast/api": ">=1.104.1",
     "react": ">=19.0.0"
   },
   "peerDependenciesMeta": {
@@ -46,8 +46,8 @@
   "devDependencies": {
     "@parcel/packager-ts": "^2.16.0",
     "@parcel/transformer-typescript-types": "^2.16.0",
-    "@raycast/api": "1.99.4",
-    "@types/node": "22.13.4",
+    "@raycast/api": "1.104.1",
+    "@types/node": "25.0.6",
     "@typescript-eslint/eslint-plugin": "6.7.5",
     "@typescript-eslint/parser": "6.7.5",
     "eslint": "8.51.0",
