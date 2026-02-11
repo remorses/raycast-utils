@@ -22,7 +22,7 @@
     "test": "npm run lint"
   },
   "peerDependencies": {
-    "termcast": "*",
+    "@raycast/api": "npm:termcast@*",
     "react": ">=19.0.0"
   },
   "peerDependenciesMeta": {
@@ -41,10 +41,10 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@raycast/api": "npm:termcast@*",
     "dequal": "^2.0.3"
   },
   "devDependencies": {
+    "@raycast/api": "npm:termcast@*",
     "@parcel/packager-ts": "^2.16.0",
     "@parcel/transformer-typescript-types": "^2.16.0",
     "@types/node": "25.0.6",
