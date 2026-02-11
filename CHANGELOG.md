@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.4
+
+- Fix peer dependency: use `termcast` instead of `@raycast/api`
+
 ## 2.2.3
 
 - Use `npm:termcast@*` alias for `@raycast/api` in devDependencies for proper termcast development

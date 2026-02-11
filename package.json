@@ -1,6 +1,6 @@
 {
   "name": "@termcast/utils",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "Set of utilities to streamline building Raycast extensions",
   "author": "Raycast Technologies Ltd.",
   "homepage": "https://developers.raycast.com/utilities/getting-started",
@@ -22,7 +22,7 @@
     "test": "npm run lint"
   },
   "peerDependencies": {
-    "@raycast/api": ">=1.104.1",
+    "termcast": "*",
     "react": ">=19.0.0"
   },
   "peerDependenciesMeta": {
