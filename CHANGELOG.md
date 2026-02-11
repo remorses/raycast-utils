@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.2.6
+
+- Remove stale `@ts-expect-error` directives in form/cache hooks so `tsc` runs cleanly with current types
+- Keep package type metadata aligned with declaration output (`dist/index.d.ts`) for better TypeScript resolution
+
 ## 2.2.4
 
 - Fix peer dependency: use `termcast` instead of `@raycast/api`
