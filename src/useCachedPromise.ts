@@ -240,9 +240,7 @@ export function useCachedPromise<
           mutateCache(data);
         } else if (options?.optimisticUpdate && options?.rollbackOnError !== false) {
           lastUpdateFrom.current = "cache";
-          // @ts-expect-error when undefined, it's expected
           laggyDataRef.current = dataBeforeOptimisticUpdate;
-          // @ts-expect-error when undefined, it's expected
           mutateCache(dataBeforeOptimisticUpdate);
         }
         throw err;

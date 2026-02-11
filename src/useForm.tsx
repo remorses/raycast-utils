@@ -180,7 +180,6 @@ export function useForm<T extends Form.Values>(props: {
 
   const setValue = useCallback(
     function <K extends keyof T>(id: K, value: SetStateAction<T[K]>) {
-      // @ts-expect-error TS is always confused about SetStateAction, but it's fine here
       setValues((values) => ({ ...values, [id]: typeof value === "function" ? value(values[id]) : value }));
     },
     [setValues],
