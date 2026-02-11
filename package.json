@@ -1,6 +1,6 @@
 {
   "name": "@termcast/utils",
-  "version": "2.2.4",
+  "version": "2.2.5",
   "description": "Set of utilities to streamline building Raycast extensions",
   "author": "Raycast Technologies Ltd.",
   "homepage": "https://developers.raycast.com/utilities/getting-started",
@@ -41,12 +41,12 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@raycast/api": "npm:termcast@*",
     "dequal": "^2.0.3"
   },
   "devDependencies": {
     "@parcel/packager-ts": "^2.16.0",
     "@parcel/transformer-typescript-types": "^2.16.0",
-    "@raycast/api": "npm:termcast@*",
     "@types/node": "25.0.6",
     "@typescript-eslint/eslint-plugin": "6.7.5",
     "@typescript-eslint/parser": "6.7.5",
