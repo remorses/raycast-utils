@@ -2,9 +2,9 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "include": ["src/**/*", "scripts/**/*"],
   "compilerOptions": {
-    "lib": ["ES2021"],
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "lib": ["esnext"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "target": "es2021",
     "strict": true,
     "isolatedModules": true,
@@ -13,6 +13,7 @@
     "forceConsistentCasingInFileNames": true,
     "jsx": "react-jsx",
     "resolveJsonModule": true,
+    "noImplicitAny": false,
     "declaration": true,
     "declarationMap": true,
     "outDir": "dist"
