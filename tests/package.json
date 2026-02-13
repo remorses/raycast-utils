@@ -236,13 +236,10 @@
       "mode": "no-view"
     }
   ],
-  "dependencies": {
-    "@raycast/api": "^1.94.0",
-    "@raycast/utils": "file:../",
-    "node-fetch": "^3.3.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@raycast/eslint-config": "^1.0.6",
+    "@raycast/api": "^1.94.0",
     "@types/node": "^22.13.10",
     "@types/react": "^19.0.10",
     "eslint": "^8.51.0",
