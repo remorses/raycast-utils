@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.2.7
+
+- Bump @types/node to 25.2.3
+- Clean up test package dependencies
+
 ## 2.2.6
 
 - Remove stale `@ts-expect-error` directives in form/cache hooks so `tsc` runs cleanly with current types
