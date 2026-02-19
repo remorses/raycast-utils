@@ -33,7 +33,7 @@ type PaginatedRequestInfo = (pagination: { page: number; lastItem?: any; cursor?
  *
  * @example
  * ```
- * import { Icon, Image, List } from "@raycast/api";
+ * import { Icon, Image, List } from "termcast";
  * import { useFetch } from "@raycast/utils";
  * import { useState } from "react";
  *

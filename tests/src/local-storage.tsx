@@ -1,4 +1,4 @@
-import { Action, ActionPanel, Color, Icon, List } from "@raycast/api";
+import { Action, ActionPanel, Color, Icon, List } from "termcast";
 import { useLocalStorage } from "@raycast/utils";
 
 const exampleTodos = [

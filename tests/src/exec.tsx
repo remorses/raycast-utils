@@ -1,4 +1,4 @@
-import { List } from "@raycast/api";
+import { List } from "termcast";
 import { useExec } from "@raycast/utils";
 import { cpus } from "os";
 import { useMemo } from "react";

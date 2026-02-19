@@ -1,7 +1,7 @@
 import { useSQL } from "@raycast/utils";
 import { resolve } from "path";
 import { homedir } from "os";
-import { List } from "@raycast/api";
+import { List } from "termcast";
 
 const NOTES_DB = resolve(homedir(), "Library/Group Containers/group.com.apple.notes/NoteStore.sqlite");
 const notesQuery = `

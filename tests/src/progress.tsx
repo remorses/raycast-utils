@@ -1,4 +1,4 @@
-import { List } from "@raycast/api";
+import { List } from "termcast";
 import { getProgressIcon } from "@raycast/utils";
 
 export default function Command() {

@@ -1,4 +1,4 @@
-import { Detail, ActionPanel, Action } from "@raycast/api";
+import { Detail, ActionPanel, Action } from "termcast";
 import { useFetch } from "@raycast/utils";
 
 export default function Command() {

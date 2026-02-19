@@ -1,4 +1,4 @@
-import { showHUD } from "@raycast/api";
+import { showHUD } from "termcast";
 import { getAccessToken, withAccessToken, OAuthService } from "@raycast/utils";
 
 const linear = OAuthService.linear({ scope: "read write" });

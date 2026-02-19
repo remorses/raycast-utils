@@ -1,4 +1,4 @@
-import { Cache } from "@raycast/api";
+import { Cache } from "termcast";
 import { hash, replacer, reviver } from "./helpers";
 
 /**

@@ -1,4 +1,4 @@
-import { Action, ActionPanel, LaunchProps, List } from "@raycast/api";
+import { Action, ActionPanel, LaunchProps, List } from "termcast";
 import { createDeeplink, DeeplinkType } from "@raycast/utils";
 
 export default function Command(

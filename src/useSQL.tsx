@@ -1,4 +1,4 @@
-import { List, MenuBarExtra, Icon, open, LaunchType, environment, ActionPanel, Action } from "@raycast/api";
+import { List, MenuBarExtra, Icon, open, LaunchType, environment, ActionPanel, Action } from "termcast";
 import { existsSync } from "node:fs";
 import os from "node:os";
 import { useRef, useState, useCallback, useMemo } from "react";

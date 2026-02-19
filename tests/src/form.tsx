@@ -1,4 +1,4 @@
-import { Action, ActionPanel, Form, showToast, Toast } from "@raycast/api";
+import { Action, ActionPanel, Form, showToast, Toast } from "termcast";
 import { useForm, FormValidation } from "@raycast/utils";
 
 interface SignUpFormValues {

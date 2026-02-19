@@ -1,4 +1,4 @@
-import { environment, LaunchProps, LaunchType } from "@raycast/api";
+import { environment, LaunchProps, LaunchType } from "termcast";
 import fs from "node:fs";
 import path from "node:path";
 

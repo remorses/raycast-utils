@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { AI } from "@raycast/api";
+import { AI } from "termcast";
 import { PromiseOptions, usePromise } from "./usePromise";
 import { FunctionReturningPromise } from "./types";
 
@@ -8,7 +8,7 @@ import { FunctionReturningPromise } from "./types";
  *
  * @example
  * ```typescript
- * import { Detail, LaunchProps } from "@raycast/api";
+ * import { Detail, LaunchProps } from "termcast";
  * import { use AI } from "@raycast/utils";
  *
  * export default function Command(props: LaunchProps<{ arguments: { prompt: string } }>) {

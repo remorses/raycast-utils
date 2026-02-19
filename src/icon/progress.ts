@@ -1,5 +1,5 @@
-import { environment, Color } from "@raycast/api";
-import type { Image } from "@raycast/api";
+import { environment, Color } from "termcast";
+import type { Image } from "termcast";
 
 function polarToCartesian(centerX: number, centerY: number, radius: number, angleInDegrees: number) {
   const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;

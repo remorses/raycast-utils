@@ -1,6 +1,6 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { Clipboard, environment, open, Toast } from "@raycast/api";
+import { Clipboard, environment, open, Toast } from "termcast";
 
 export const handleErrorToastAction = (error: unknown): Toast.ActionOptions => {
   let privateExtension = true;

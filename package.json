@@ -18,12 +18,11 @@
     }
   },
   "scripts": {
-    "lint": "eslint src/",
     "prepublishOnly": "tsc",
     "test": "npm run lint"
   },
   "peerDependencies": {
-    "@raycast/api": "npm:termcast@*",
+    "termcast": "*",
     "react": ">=19.0.0"
   },
   "peerDependenciesMeta": {
@@ -46,18 +45,10 @@
     "dequal": "^2.0.3"
   },
   "devDependencies": {
-    "@raycast/api": "npm:termcast@*",
+    "termcast": "workspace:*",
     "@parcel/packager-ts": "^2.16.0",
     "@parcel/transformer-typescript-types": "^2.16.0",
     "@types/node": "25.2.3",
-    "@typescript-eslint/eslint-plugin": "6.7.5",
-    "@typescript-eslint/parser": "6.7.5",
-    "eslint": "8.51.0",
-    "eslint-config-prettier": "9.0.0",
-    "eslint-plugin-import": "2.28.1",
-    "eslint-plugin-jest": "27.4.2",
-    "eslint-plugin-prettier": "5.0.0",
-    "eslint-plugin-react-hooks": "4.6.0",
     "parcel": "^2.16.0",
     "typescript": "^5.9.3"
   }

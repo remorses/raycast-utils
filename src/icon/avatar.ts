@@ -1,4 +1,4 @@
-import type { Image } from "@raycast/api";
+import type { Image } from "termcast";
 import { slightlyLighterColor, slightlyDarkerColor } from "./color";
 
 function getWholeCharAndI(str: string, i: number): [string, number] {

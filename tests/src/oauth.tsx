@@ -1,4 +1,4 @@
-import { Detail } from "@raycast/api";
+import { Detail } from "termcast";
 import { withAccessToken, OAuthService, getAccessToken } from "@raycast/utils";
 
 const slack = OAuthService.slack({

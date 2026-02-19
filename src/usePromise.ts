@@ -1,5 +1,5 @@
 import { useEffect, useCallback, RefObject, useRef, useState } from "react";
-import { environment, LaunchType, Toast } from "@raycast/api";
+import { environment, LaunchType, Toast } from "termcast";
 import { useDeepMemo } from "./useDeepMemo";
 import {
   FunctionReturningPromise,
@@ -55,7 +55,7 @@ export type PromiseOptions<T extends FunctionReturningPromise | FunctionReturnin
  * ```
  * import { setTimeout } from "node:timers/promises";
  * import { useState } from "react";
- * import { List } from "@raycast/api";
+ * import { List } from "termcast";
  * import { usePromise } from "@raycast/utils";
  *
  * export default function Command() {

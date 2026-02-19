@@ -1,4 +1,4 @@
-import { showToast } from "@raycast/api";
+import { showToast } from "termcast";
 import { withCache } from "@raycast/utils";
 
 async function expensiveFunction() {

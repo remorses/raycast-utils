@@ -1,13 +1,13 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { Clipboard, environment, open, Toast, showToast } from "@raycast/api";
+import { Clipboard, environment, open, Toast, showToast } from "termcast";
 
 /**
  * Shows a failure Toast for a given Error.
  *
  * @example
  * ```typescript
- * import { showHUD } from "@raycast/api";
+ * import { showHUD } from "termcast";
  * import { runAppleScript, showFailureToast } from "@raycast/utils";
  *
  * export default async function () {

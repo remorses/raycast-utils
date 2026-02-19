@@ -1,4 +1,4 @@
-import { Action, ActionPanel, List, environment } from "@raycast/api";
+import { Action, ActionPanel, List, environment } from "termcast";
 import { useCachedState, useStreamJSON } from "@raycast/utils";
 import { join } from "path";
 import { useCallback, useState } from "react";

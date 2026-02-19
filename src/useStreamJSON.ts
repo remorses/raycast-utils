@@ -1,4 +1,4 @@
-import { environment } from "@raycast/api";
+import { environment } from "termcast";
 import { createReadStream, createWriteStream, mkdirSync, Stats } from "node:fs";
 import { stat } from "node:fs/promises";
 import { join, normalize } from "node:path";
@@ -238,7 +238,7 @@ type Options<T> = {
  *
  * @example
  * ```
- * import { List } from "@raycast/api";
+ * import { List } from "termcast";
  * import { useStreamJSON } from "@raycast/utils";
  *
  * type Formula = { name: string; desc?: string };
@@ -258,7 +258,7 @@ type Options<T> = {
  *
  * @example
  * ```
- * import { List } from "@raycast/api";
+ * import { List } from "termcast";
  * import { useStreamJSON } from "@raycast/utils";
  * import { homedir } from "os";
  * import { join } from "path";
@@ -289,7 +289,7 @@ export function useStreamJSON<T, U = unknown>(url: RequestInfo): UseCachedPromis
  *
  * @example
  * ```
- * import { List, environment } from "@raycast/api";
+ * import { List, environment } from "termcast";
  * import { useStreamJSON } from "@raycast/utils";
  * import { join } from 'path';
  * import { useCallback, useState } from "react";
@@ -332,7 +332,7 @@ export function useStreamJSON<T, U = unknown>(url: RequestInfo): UseCachedPromis
  *
  * @example
  * ```
- * import { List, environment } from "@raycast/api";
+ * import { List, environment } from "termcast";
  * import { useStreamJSON } from "@raycast/utils";
  * import { join } from "path";
  * import { homedir } from "os";

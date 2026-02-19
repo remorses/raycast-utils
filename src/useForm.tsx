@@ -1,4 +1,4 @@
-import { Form } from "@raycast/api";
+import { Form } from "termcast";
 import { useState, useCallback, useMemo, useRef, SetStateAction } from "react";
 import { useLatest } from "./useLatest";
 
@@ -75,7 +75,7 @@ interface FormProps<T extends Form.Values> {
  *
  * @example
  * ```
- * import { Action, ActionPanel, Form, showToast, Toast } from "@raycast/api";
+ * import { Action, ActionPanel, Form, showToast, Toast } from "termcast";
  * import { useForm, FormValidation } from "@raycast/utils";
  *
  * interface SignUpFormValues {

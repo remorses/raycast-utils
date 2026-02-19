@@ -1,4 +1,4 @@
-import { OAuth } from "@raycast/api";
+import { OAuth } from "termcast";
 
 export type OAuthType = "oauth" | "personal";
 

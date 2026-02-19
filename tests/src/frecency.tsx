@@ -1,4 +1,4 @@
-import { List, ActionPanel, Action, Icon } from "@raycast/api";
+import { List, ActionPanel, Action, Icon } from "termcast";
 import { useFetch, useFrecencySorting } from "@raycast/utils";
 
 export default function Command() {

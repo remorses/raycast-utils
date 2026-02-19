@@ -1,4 +1,4 @@
-import { Icon, Image } from "@raycast/api";
+import { Icon, Image } from "termcast";
 import { URL } from "node:url";
 
 /**

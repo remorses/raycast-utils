@@ -36,7 +36,7 @@ type AppleScriptOptions = {
  *
  * @example
  * ```typescript
- * import { showHUD } from "@raycast/api";
+ * import { showHUD } from "termcast";
  * import { runAppleScript, showFailureToast } from "@raycast/utils";
  *
  * export default async function () {

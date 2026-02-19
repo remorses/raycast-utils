@@ -1,4 +1,4 @@
-import { Detail, LaunchProps } from "@raycast/api";
+import { Detail, LaunchProps } from "termcast";
 import { getAccessToken, withAccessToken, OAuthService } from "@raycast/utils";
 
 const github = OAuthService.github({

@@ -1,4 +1,4 @@
-import { List, ActionPanel, Action } from "@raycast/api";
+import { List, ActionPanel, Action } from "termcast";
 import { useCachedPromise } from "@raycast/utils";
 import { useState } from "react";
 import { setTimeout } from "timers/promises";

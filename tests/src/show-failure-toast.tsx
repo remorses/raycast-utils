@@ -1,4 +1,4 @@
-import { Action, ActionPanel, List, openCommandPreferences } from "@raycast/api";
+import { Action, ActionPanel, List, openCommandPreferences } from "termcast";
 import { showFailureToast } from "@raycast/utils";
 
 export default function Command() {

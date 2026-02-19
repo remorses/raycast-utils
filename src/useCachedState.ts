@@ -1,5 +1,5 @@
 import { useCallback, Dispatch, SetStateAction, useSyncExternalStore, useMemo } from "react";
-import { Cache } from "@raycast/api";
+import { Cache } from "termcast";
 import { useLatest } from "./useLatest";
 import { replacer, reviver } from "./helpers";
 

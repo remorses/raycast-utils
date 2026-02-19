@@ -1,4 +1,4 @@
-import { Detail, LaunchProps, AI, ActionPanel, Action } from "@raycast/api";
+import { Detail, LaunchProps, AI, ActionPanel, Action } from "termcast";
 import { useAI } from "@raycast/utils";
 import { useState } from "react";
 

@@ -1,4 +1,4 @@
-import { List, ActionPanel, Action } from "@raycast/api";
+import { List, ActionPanel, Action } from "termcast";
 import { useCachedState } from "@raycast/utils";
 
 export default function Command() {

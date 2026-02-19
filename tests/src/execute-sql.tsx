@@ -1,4 +1,4 @@
-import { List } from "@raycast/api";
+import { List } from "termcast";
 import { resolve } from "path";
 import { homedir } from "os";
 import { usePromise, executeSQL } from "@raycast/utils";

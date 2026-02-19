@@ -9,7 +9,7 @@ import { baseExecuteSQL } from "./sql-utils";
  *
  * @example
  * ```typescript
- * import { closeMainWindow, Clipboard } from "@raycast/api";
+ * import { closeMainWindow, Clipboard } from "termcast";
  * import { executeSQL } from "@raycast/utils";
  *
  * type Message = { body: string; code: string };

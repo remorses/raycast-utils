@@ -1,4 +1,4 @@
-import { showHUD } from "@raycast/api";
+import { showHUD } from "termcast";
 import { runAppleScript } from "@raycast/utils";
 
 export default async function () {

@@ -1,4 +1,4 @@
-import { List, ActionPanel, Action } from "@raycast/api";
+import { List, ActionPanel, Action } from "termcast";
 import { usePromise } from "@raycast/utils";
 import { useState } from "react";
 

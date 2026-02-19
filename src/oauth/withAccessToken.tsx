@@ -1,5 +1,5 @@
 import React from "react";
-import { environment, OAuth } from "@raycast/api";
+import { environment, OAuth } from "termcast";
 import type { OAuthType, OnAuthorizeParams } from "./types";
 
 let token: string | null = null;
@@ -47,7 +47,7 @@ export type WithAccessTokenComponentOrFn<T = any, U = any> = ((params: T) => Pro
  *
  * @example
  * ```typescript
- * import { Detail } from "@raycast/api";
+ * import { Detail } from "termcast";
  * import { OAuthService, getAccessToken, withAccessToken } from "@raycast/utils";
  *
  * const github = OAuthService.github({ scope: "notifications repo read:org read:user read:project" });

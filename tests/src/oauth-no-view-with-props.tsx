@@ -1,4 +1,4 @@
-import { LaunchProps, showHUD } from "@raycast/api";
+import { LaunchProps, showHUD } from "termcast";
 import { getAccessToken, withAccessToken, OAuthService } from "@raycast/utils";
 
 const linear = OAuthService.linear({

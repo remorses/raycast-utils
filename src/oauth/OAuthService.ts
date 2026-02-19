@@ -1,4 +1,4 @@
-import { Color, OAuth } from "@raycast/api";
+import { Color, OAuth } from "termcast";
 import { PROVIDER_CLIENT_IDS } from "./providers";
 import type {
   OAuthServiceOptions,

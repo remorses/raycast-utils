@@ -1,4 +1,4 @@
-import { LocalStorage } from "@raycast/api";
+import { LocalStorage } from "termcast";
 import { showFailureToast } from "./showFailureToast";
 import { replacer, reviver } from "./helpers";
 import { usePromise } from "./usePromise";

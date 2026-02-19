@@ -41,7 +41,7 @@ export type CachedPromiseOptions<
  * ```
  * import { setTimeout } from "node:timers/promises";
  * import { useState } from "react";
- * import { List } from "@raycast/api";
+ * import { List } from "termcast";
  * import { useCachedPromise } from "@raycast/utils";
  *
  * export default function Command() {

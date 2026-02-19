@@ -1,4 +1,4 @@
-import { showHUD } from "@raycast/api";
+import { showHUD } from "termcast";
 import { runPowerShellScript } from "@raycast/utils";
 
 export default async function () {
