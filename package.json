@@ -1,6 +1,6 @@
 {
   "name": "@termcast/utils",
-  "version": "2.2.7",
+  "version": "2.2.8",
   "description": "Set of utilities to streamline building Raycast extensions",
   "author": "Raycast Technologies Ltd.",
   "homepage": "https://developers.raycast.com/utilities/getting-started",

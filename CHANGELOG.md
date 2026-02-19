@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.8
+
+- Replace `@raycast/api` npm alias with direct `termcast` imports throughout the codebase
+- Remove ESLint configuration and dependencies (no longer needed)
+- Clean up package.json to remove unused linting tools
+
 ## 2.2.7
 
 - Bump @types/node to 25.2.3
